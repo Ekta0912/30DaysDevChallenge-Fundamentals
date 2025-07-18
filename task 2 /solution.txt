@@ -1,3 +1,4 @@
+The missing number is 8
 💡 Explanation:
 
 - We initialize missing_num with the size of the vector nums, which represents the number n in the range [0, n].
