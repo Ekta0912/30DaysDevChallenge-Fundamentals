@@ -1,0 +1,12 @@
+✅ Shortest path from A to F (BFS): A -> C -> F
+
+✅ One valid path from A to F (DFS): A -> B -> E -> F
+   - Total weight (latency): 6 ms
+
+🧠 Explanation:
+
+1. I used *Breadth-First Search (BFS)* to find the shortest path in terms of *number of hops*. BFS works well here because it checks all neighbors level by level, ensuring the first time it reaches the destination is via the shortest path (by hops).
+
+2. I used *Depth-First Search (DFS)* to find *any valid path from A to F* and calculated the *total latency* of that path. DFS goes deep into a path before backtracking, which helps explore a complete route.
+
+Implemented in C++ with custom structures and traversal logic.
