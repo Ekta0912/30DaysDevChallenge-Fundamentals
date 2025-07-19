@@ -7,13 +7,11 @@
 
 using namespace std;
 
-// Define a structure for the graph edge
 struct Edge {
     char to;
     int weight;
 };
 
-// Adjacency list representation of the graph
 unordered_map<char, vector<Edge>> graph = {
     {'A', {{'B', 2}, {'C', 5}}},
     {'B', {{'D', 8}, {'E', 3}}},
@@ -23,7 +21,6 @@ unordered_map<char, vector<Edge>> graph = {
     {'F', {}}
 };
 
-// -------- BFS for Shortest Path by Hops --------
 vector<char> bfs_shortest_path(char start, char end) {
     queue<vector<char>> q;
     unordered_map<char, bool> visited;
@@ -49,10 +46,8 @@ vector<char> bfs_shortest_path(char start, char end) {
         }
     }
 
-    return {}; // return empty if no path
-}
+    return {}; 
 
-// -------- DFS for Weighted Path --------
 bool dfs_path(char current, char end, unordered_map<char, bool>& visited, vector<char>& path, int& total_weight, int current_weight) {
     visited[current] = true;
     path.push_back(current);
@@ -74,9 +69,8 @@ bool dfs_path(char current, char end, unordered_map<char, bool>& visited, vector
     return false;
 }
 
-// -------- Main Function --------
+
 int main() {
-    // BFS result
     vector<char> bfs_result = bfs_shortest_path('A', 'F');
 
     cout << "Shortest path (BFS, by hops): ";
@@ -86,7 +80,7 @@ int main() {
     }
     cout << endl;
 
-    // DFS result
+
     vector<char> dfs_result;
     unordered_map<char, bool> visited;
     int total_weight = 0;
